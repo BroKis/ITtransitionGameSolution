@@ -21,6 +21,7 @@ class Program
             var computerTurn = RandomNumberGenerator.GetInt32(args.Length);
             var hash = security.GenerateHMAC(key, args[computerTurn]);
 
+            Console.WriteLine($"Key:{key}");
             Console.WriteLine($"HMAC:{hash}");
 
             Console.WriteLine("Available moves:");
@@ -55,9 +56,9 @@ class Program
 
             Console.WriteLine($"Your turn:{args[playerTurn - 1]}");
             Console.WriteLine($"Computer turn:{args[computerTurn]}");
-
             Console.WriteLine($"Status:{checker.TurnCheck(computerTurn, playerTurn - 1)}");
-
+            Console.WriteLine($"Key:{key}");
+            hash = security.GenerateHMAC(key, args[computerTurn]);
             Console.WriteLine($"HMAC:{hash}");
             Console.Write("\n\n\n");
         }
