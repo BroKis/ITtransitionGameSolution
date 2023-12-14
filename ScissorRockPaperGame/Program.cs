@@ -21,7 +21,6 @@ class Program
             var computerTurn = RandomNumberGenerator.GetInt32(args.Length);
             var hash = security.GenerateHMAC(key, args[computerTurn]);
 
-            Console.WriteLine($"Key:{key}");
             Console.WriteLine($"HMAC:{hash}");
 
             Console.WriteLine("Available moves:");
